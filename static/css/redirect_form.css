@@ -1,0 +1,114 @@
+/* Fontes importadas */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Centralizar a página */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* altura total da página */
+    margin: 0;
+}
+
+h1.headlines, p.return_message {
+    text-align: center;
+}
+
+p.return_message,
+a.go_to_home_link {
+    margin: 20px auto;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Estilo da div home_link_div para se parecer com um botão */
+div.home_link_div {
+    background-color: #00C853;  /* cor de fundo */
+    padding: 15px 30px;  /* espaço interno para o formato do botão */
+    border-radius: 5px;  /* bordas arredondadas */
+    cursor: pointer;  /* mudar o cursor para indicar que é interativo */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+div.home_link_div:hover {
+    background-color: #01a746;  /* cor de fundo quando passar o mouse */
+    transform: scale(1.05);  /* efeito de aumentar ligeiramente ao passar o mouse */
+}
+
+a.go_to_home_link {
+    color: white;  /* cor do texto do link */
+    font-weight: bold;  /* deixar o texto em negrito */
+}
+
+a.go_to_home_link:hover {
+    color: #000000;  /* cor do texto do link ao passar o mouse */
+}
+
+/* Garantir que a página tenha um fundo claro e boa legibilidade */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+
+
+/* Responsividade */
+
+/* Para telas pequenas (smartphones) */
+@media screen and (max-width: 600px) {
+    h1.headlines {
+        font-size: 24px; /* Reduzir o tamanho do título */
+    }
+
+    p.return_message {
+        font-size: 20px; /* Reduzir o tamanho da mensagem */
+    }
+
+    div.home_link_div {
+        padding: 12px 20px; /* Ajustar o padding do botão */
+    }
+
+    a.go_to_home_link {
+        font-size: 18px; /* Ajustar o tamanho do link */
+    }
+}
+
+/* Para telas médias (tablets) */
+@media screen and (max-width: 768px) {
+    h1.headlines {
+        font-size: 28px; /* Ajustar o tamanho do título */
+    }
+
+    p.return_message {
+        font-size: 24px; /* Ajustar o tamanho da mensagem */
+    }
+
+    div.home_link_div {
+        padding: 14px 25px; /* Ajustar o padding do botão */
+    }
+
+    a.go_to_home_link {
+        font-size: 22px; /* Ajustar o tamanho do link */
+    }
+}
+
+/* Para telas grandes (desktops) */
+@media screen and (min-width: 1024px) {
+    h1.headlines {
+        font-size: 36px; /* Ajustar o tamanho do título */
+    }
+
+    p.return_message {
+        font-size: 30px; /* Ajustar o tamanho da mensagem */
+    }
+
+    div.home_link_div {
+        padding: 20px 40px; /* Ajustar o padding do botão */
+    }
+
+    a.go_to_home_link {
+        font-size: 26px; /* Ajustar o tamanho do link */
+    }
+}

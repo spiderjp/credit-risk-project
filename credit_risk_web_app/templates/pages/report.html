@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Relatórios - Geração e Comparações</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/go_back.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+    <link rel="stylesheet" href="{% static 'css/report.css' %}">
+
+</head>
+<body>
+
+    <div class="go_back_container">
+        
+        <div class="div_go_back">
+            <a href="/" class="go_back_link">Voltar</a>
+        </div>
+
+    </div>
+
+    <div class="headlines_container">
+        <div id="headline" class="div_headlines">
+            <h1 class="headlines">Gere Relatório e Faça Comparações</h1>
+        </div>
+    </div>
+
+    <div class="search_container">
+
+        <h2 class="search_title">Pesquisar Empresa</h2>
+
+        <form id="search_form">
+
+                {% csrf_token %}
+                {{ form.company }}
+
+                <button type="submit" class="search_button">Pesquisar</button>
+                
+        </form>
+
+    </div>
+
+    <!-- Div para mostrar resultados -->
+    <div class="result_container">
+
+        <h2 class="result_title">Relatório Gerado</h2>
+        
+        <div id="results">
+            <!-- Os resultados da pesquisa irão aparecer aqui -->
+        </div>
+    
+    </div>
+
+    <script>
+        document.getElementById("search_form").addEventListener("submit", function(event) {
+            
+            event.preventDefault(); // Impede o recarregamento da página
+    
+            let companyId = document.querySelector("select[name='company']").value;
+            let resultsDiv = document.getElementById("results");
+    
+            if (!companyId) {
+                resultsDiv.innerHTML = "<p style='color: red;'>Por favor, selecione uma empresa.</p>";
+                return;
+            }
+    
+            fetch(`/get_company_data/?company_id=${companyId}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        resultsDiv.innerHTML = `<p style='color: red;'>${data.error}</p>`;
+                    } else {
+                        let html = "<ul>";
+    
+                        Object.entries(data.data).forEach(([year, indicators]) => {
+                            html += `<li><strong>${year}</strong><ul>`;
+    
+                            Object.entries(indicators).forEach(([name, value]) => {
+                                
+                                // Se o valor for 'N/A', ele será exibido normalmente
+                                if (value === "N/A") {
+                                
+                                    html += `<li>${name}: N/A</li>`;
+                                
+                                } else {
+                                
+                                    // Tentativa de converter o valor para número e formatá-lo
+                                    let numericValue = parseFloat(value);
+                                    html += `<li>${name}: ${isNaN(numericValue) ? value : numericValue.toFixed(2)}</li>`;
+                                
+                                }
+                            });
+    
+                            html += "</ul></li>";
+                        });
+    
+                        html += "</ul>";
+                        resultsDiv.innerHTML = html;
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro ao buscar dados:", error);
+                    resultsDiv.innerHTML = "<p style='color: red;'>Erro ao buscar os dados. Tente novamente.</p>";
+                });
+        });
+    </script>
+    
+        
+</body>
+</html>
+
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+# Ignorando arquivos de texto irrelevantes
+cores.txt
+lembretes.txt
+textos.txt
+
+# Ignorando configurações e credenciais sensíveis 
+.env
+
+# Ignorando ambiente virtual
+credit-risk-project-env/
+
+# Ignorando a pasta de Bytecodes Compilados do Python 
+credit_risk_web_app/__pycache__/
+*.pyc
+
+# Ignorando arquivos temporários do VS Code
+.vscode/
+
+# Ignorando arquivos de banco de dados locais (não aplicável ao PostgreSQL)
+# Ignorando backups de banco de dados PostgreSQL
+*.sql
+*.bak
+
+
+# Ignorando a pasta csv e os scripts de manipulação de arquivos .csv
+credit_risk_web_app/csv
+credit_risk_web_app/scripts/
+
+# Ignorando a pasta de migrações do Django
+credit_risk_web_app/migrations/
+
+# Ignorando arquivos e pastas que serão usados em uma próxima versão da aplicação
+credit_risk_web_app/templates/pages/search.html
+credit_risk_web_app/views/ajax/
+credit_risk_web_app/views/search_view.py
+credit_risk_web_app/indicators_and_metrics/financial_metrics.py
+
+

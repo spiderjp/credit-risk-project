@@ -1,0 +1,47 @@
+/* Fontes importadas */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* Div do Link */
+div.go_back_container {
+    display: flex;
+    justify-content: center; /* Centraliza os elementos na página */
+    gap: 40px; /* Define um espaçamento entre as divs */
+    flex-wrap: wrap; /* Garante que, se a tela for pequena, os elementos quebrem para a linha de baixo */
+    max-width: 300px; /* Define uma largura máxima para evitar que os elementos fiquem muito afastados */
+}
+
+div.div_go_back {
+    flex: 1; /* Faz com que os elementos se ajustem proporcionalmente */
+    max-width: 100px; /* Define um tamanho máximo para evitar que ocupem a tela toda */
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #00C853;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    border-radius: 8px;
+}
+
+div.div_go_back:hover {
+    background-color: #01a746;
+    text-align: center;
+    color: #000000;
+}
+
+
+
+/* Link */
+a.go_back_link {
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    border-radius: 8px;
+}
+
+a.go_back_link:hover {
+    background-color: #01a746;
+    text-align: center;
+    color: #000000;
+}

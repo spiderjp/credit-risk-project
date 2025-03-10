@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Inicial - Análise de Crédito</title>
+
+    {% load static %}
+    
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    
+</head>
+<body>
+
+    <div class="home_headlines_container">
+
+        <div id="welcome_headline" class="div_home_headlines">
+            <h1 class="headlines">Bem-vindo(a)!</h1>
+        </div>
+        
+        <div id="subheading" class="div_home_headlines">
+            <h2 class="headlines">O que você gostaria de fazer?</h2>
+        </div>
+
+    </div>
+
+    
+
+    <div class="home_links_container">
+
+        <div id="link_financial_form" class="div_home_links">
+            <a href="financial-form/">Novo Cadastro</a>
+        </div>
+    
+        <!--
+        <div id="link_to_search_company" class="div_home_links">
+            <a href="search-company/">Pesquisar Companhia</a>
+        </div>
+        -->
+        
+        <div id="link_to_generate_report" class="div_home_links">
+            <a href="generate-report/">Gerar Relatório</a>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
